@@ -1,0 +1,17 @@
+steps:
+# Note: this is not `go install`. Instead, the "go cloud builder container"
+# installs dependencies before being able to run `go build` next.
+#- name: 'gcr.io/cloud-builders/go'
+#  args: ['install', '.']
+#  env: ['PROJECT_ROOT=tryout-cloud-builder']
+- name: 'gcr.io/cloud-builders/go'
+  args:
+    - 'get'
+    - 'github.com/stephen-soltesz/tryout-cloud-builder'
+  env:
+    - 'PROJECT_ROOT=github.com/stephen-soltesz/tryout-cloud-builder'
+artifacts:
+  objects:
+    location: 'gs://soltesz-$PROJECT_ID/'
+    paths:
+      - 'gopath/bin/tryout-cloud-builder'
