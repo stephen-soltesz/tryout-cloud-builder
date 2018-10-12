@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fmt.Println("hello")
+	fmt.Println("hello world")
 
 	http.Handle("/metrics", promhttp.Handler())
 	log.Fatal(http.ListenAndServe(":8080", nil))
