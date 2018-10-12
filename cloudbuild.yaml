@@ -9,4 +9,4 @@ artifacts:
   objects:
     location: 'gs://soltesz-$PROJECT_ID/'
     paths:
-      - 'gopath/bin/tryout-cloud-builder'
+      - 'gopath/bin/*'
